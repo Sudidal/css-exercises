@@ -1,10 +1,16 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
+  height: 100vh;
   text-align: center;
+  display: grid;
+  grid-template-rows: 100px 50px 1fr 50px;
+  grid-template-columns: .25fr 1fr;
+  gap: 5px;
 }
 
 .container div {
@@ -17,6 +23,26 @@
 
 .header {
   background-color: #393f4d;
+  grid-column: 1 / 6;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.header .menu
+{
+  flex: 1;
+}
+.header .logo
+{
+  flex: 1;
+  text-align: start; 
+}
+.header .menu ul
+{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  list-style-type: none;
 }
 
 .menu ul,
@@ -26,6 +52,11 @@
 
 .sidebar {
   background-color: #C50208;
+  grid-column: 1 / 2;
+  grid-row: 2 / 6;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .sidebar .photo {
@@ -34,6 +65,7 @@
   font-size: 12px;
   font-weight: normal;
   border-radius: 10px;
+  flex: 1;
 }
 
 
@@ -42,12 +74,21 @@
   color: black;
   font-size: 16px;
   font-weight: normal;
+  flex: 1;
 }
 
 .nav {
   background-color: #C50208;
+  grid-column: 2 / 6;
+  grid-row: 2 / 3;
 }
-
+.nav ul
+{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  gap: 20%;
+}
 .nav ul li {
   font-size: 16px;
   text-transform: uppercase;
@@ -55,6 +96,17 @@
 
 .article {
   background-color: #bccbde;
+  display: grid;
+  grid-column: 2 / 6;
+  grid-row: 3 / 5;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.article .card {
+  background-color: #FFFFFF;
+  color: black;
+  text-align: center;
 }
 
 .article p {
@@ -62,12 +114,6 @@
   font-family: sans-serif;
   color: white;
   text-align: left;
-}
-
-.article .card {
-  background-color: #FFFFFF;
-  color: black;
-  text-align: center;
 }
 
 .card p {
@@ -83,6 +129,7 @@
 
 .footer {
   background-color: #393f4d;
+  grid-column: 1 / 6;
 }
 
 .footer p {
